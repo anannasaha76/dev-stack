@@ -1,32 +1,74 @@
-# React + TypeScript + Vite
+Project Name:Dev Stack
 
-This template provides a minimal setup to get React working in Vite with HMR and some Oxlint rules.
+📌 About The Project
 
-Currently, two official plugins are available:
+Dev Stack is an interactive technology stack builder developed with React and TypeScript. It allows users to explore different technologies and create their own personalized development stack by adding and removing technologies in real time.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+The project provides a simple, clean, and responsive interface for discovering technologies and managing a custom stack.
 
-## React Compiler
+✨ Features
+🧩 Custom Stack Builder
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+Users can create their own personalized technology stack by adding and removing technologies. Duplicate entries are automatically prevented, and changes are reflected instantly.
 
-## Expanding the Oxlint configuration
+🔔 Smart Toast Notifications
 
-If you are developing a production application, we recommend enabling type-aware lint rules by installing `oxlint-tsgolint` and editing `.oxlintrc.json`:
+Users receive immediate feedback through toast notifications when they add, remove, or clear technologies from their stack.
 
-```json
-{
-  "$schema": "./node_modules/oxlint/configuration_schema.json",
-  "plugins": ["react", "typescript", "oxc"],
-  "options": {
-    "typeAware": true
-  },
-  "rules": {
-    "react/rules-of-hooks": "error",
-    "react/only-export-components": ["warn", { "allowConstantExport": true }]
-  }
-}
-```
+💻 Technology Explorer
 
-See the [Oxlint rules documentation](https://oxc.rs/docs/guide/usage/linter/rules) for the full list of rules and categories.
+Users can explore different technologies along with useful information such as their category, description, difficulty level, rating, and badge.
+
+🛠️ Technologies Used
+React + TypeScript — Building the user interface
+Tailwind CSS — Styling and responsive layout
+React-Toastify — Toast notifications
+Vite — Development and build tool
+React Icons — Icons
+JSON — Storing technology data
+📸 Project Preview
+
+⚛️ React Questions & Answers
+1. What is JSX, and why is it used in React?
+JSX is a syntax that allows us to write HTML like code inside JavaScript or TypeScript. React uses JSX to make it easier to create and understand UI components.
+
+2. What is the difference between props and state?
+
+Props are data passed from a parent component to a child component. State is data managed inside a component that can change over time.
+
+3. What does the useState hook do, and where did you use it in this project?
+
+useState allows a component to store and update data. I used it in App.tsx to store the selected technologies in the user's stack.The user's selected technologies and update the stack when technologies are added or removed.
+
+const [stack, setStack] = useState<TechnologyStacksType[]>([]);
+4. What does the useEffect hook do, and why did you need it to load the JSON data?
+
+I did not use useEffect in this project. Instead, I used use() with Suspense to handle the Promise and load the technology data from the JSON file.
+
+5. Why does every item in a .map() list need a unique key prop?
+
+The key helps React identify each item in a list. It allows React to efficiently understand which items were added, removed, or changed.
+
+6. What is conditional rendering? Show one place you used it.
+
+Conditional rendering means displaying different UI based on a condition.
+
+I used it to show a message when the stack is empty:
+
+{stack.length === 0 ? (
+    <p>  Your stack is empty.</p>
+) : (
+    // Selected technologies
+)}
+7. How do you pass data from a parent component to a child component, and how does a child send something back to the parent?
+
+A parent passes data to a child using props. A child can send information back by calling a function that the parent passes as a prop.
+
+In this project, App.tsx passes stack and handleAddStack to TechCard:
+
+<TechCard
+    stack={stack}
+    handleAddStack={handleAddStack}
+/>
+
+When a user adds a technology, TechCard calls handleAddStack(), which updates the state in App.tsx.
