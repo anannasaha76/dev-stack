@@ -42,6 +42,7 @@ Props are data passed from a parent component to a child component. State is dat
 useState allows a component to store and update data. I used it in App.tsx to store the selected technologies in the user's stack.The user's selected technologies and update the stack when technologies are added or removed.
 
 const [stack, setStack] = useState<TechnologyStacksType[]>([]);
+
 4. What does the useEffect hook do, and why did you need it to load the JSON data?
 
 I did not use useEffect in this project. Instead, I used use() with Suspense to handle the Promise and load the technology data from the JSON file.
@@ -61,6 +62,8 @@ I used it to show a message when the stack is empty:
 ) : (
     // Selected technologies
 )}
+
+
 7. How do you pass data from a parent component to a child component, and how does a child send something back to the parent?
 
 A parent passes data to a child using props. A child can send information back by calling a function that the parent passes as a prop.
