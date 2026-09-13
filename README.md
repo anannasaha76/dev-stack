@@ -44,17 +44,14 @@ useState allows a component to store and update data. I used it in App.tsx to st
 const [stack, setStack] = useState<TechnologyStacksType[]>([]);
 
 4. What does the useEffect hook do, and why did you need it to load the JSON data?
-
 I did not use useEffect in this project. Instead, I used use() with Suspense to handle the Promise and load the technology data from the JSON file.
 
 5. Why does every item in a .map() list need a unique key prop?
-
 The key helps React identify each item in a list. It allows React to efficiently understand which items were added, removed, or changed.
 
 6. What is conditional rendering? Show one place you used it.
 
 Conditional rendering means displaying different UI based on a condition.
-
 I used it to show a message when the stack is empty:
 
 {stack.length === 0 ? (
@@ -67,9 +64,7 @@ I used it to show a message when the stack is empty:
 7. How do you pass data from a parent component to a child component, and how does a child send something back to the parent?
 
 A parent passes data to a child using props. A child can send information back by calling a function that the parent passes as a prop.
-
 In this project, App.tsx passes stack and handleAddStack to TechCard:
-
 <TechCard
     stack={stack}
     handleAddStack={handleAddStack}
