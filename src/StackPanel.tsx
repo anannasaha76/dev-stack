@@ -34,13 +34,9 @@ export default function StackPanel({
             </p>
 
             {stack.length === 0 ? (
-
                 <div className="mt-5 text-center border border-dashed border-[#CBD5E1] p-4 rounded-xl">
-
                     <p className="text-[11px] text-[#94A3B8] leading-5">
-                        No technologies added yet.
-                        <br />
-                        Start building your stack!
+                        Your stack is empty.
                     </p>
 
                 </div>
@@ -93,7 +89,7 @@ export default function StackPanel({
 
                 <button
                     onClick={onRemoveAll}
-                    className="w-full border border-red-200 text-red-500 py-2 rounded-lg text-[11px] hover:bg-red-50"
+                    className="w-full border border-[#ED8C85] text-[#D82C20] py-2 rounded-lg text-[11px] hover:bg-red-50"
                 >
                     Remove All
                 </button>

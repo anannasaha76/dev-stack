@@ -72,7 +72,7 @@ function App() {
                 <div className="max-w-[1200px] mx-auto px-8">
                     <h1 className="text-[28px] md:text-[32px] font-bold text-[#0F172A]">
                         Explore the{" "}
-                        <span className="text-[#D91B7E]">Technologies</span>
+                        <span className="bg-gradient-to-r from-[#EC4899] to-[#8B5CF6] bg-clip-text text-transparent">Technologies</span>
                     </h1>
                     <p className="text-[#64748B] text-sm mt-2 mb-6">
                         Pick one technology per category to build your ideal stack.
