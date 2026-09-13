@@ -24,7 +24,7 @@ export default function TechCard({TechnologyPromiseData,stack,handleAddStack}: T
 
     return (
 
-        <div className="flex flex-wrap gap-4">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
 
             {technologies.map((technology) => {
 
@@ -34,7 +34,7 @@ export default function TechCard({TechnologyPromiseData,stack,handleAddStack}: T
 
                 return (
 
-                    <div key={technology.id} className="w-[288px] h-[285px] flex flex-col border border-[#E2E8F0] p-4 rounded-2xl bg-white">
+                    <div key={technology.id} className="w-full h-[285px] flex flex-col border border-[#E2E8F0] p-4 rounded-2xl bg-white">
                     <div className="flex justify-between items-start">
                     <img className="w-9 h-9 object-contain" src={technology.icon} alt={technology.name}/>
                     <span className="text-[11px] px-2.5 py-1.5 rounded-lg bg-[#F1F5F9] text-[#475569]">

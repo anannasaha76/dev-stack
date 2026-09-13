@@ -68,8 +68,8 @@ function App() {
             <ToastContainer />
             <Navbar />
             <Hero />
-            <section className="px-5 py-10">
-                <div className="max-w-[1200px] mx-auto">
+            <section className="py-10">
+                <div className="max-w-[1200px] mx-auto px-8">
                     <h1 className="text-[28px] md:text-[32px] font-bold text-[#0F172A]">
                         Explore the{" "}
                         <span className="text-[#D91B7E]">Technologies</span>
